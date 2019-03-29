@@ -104,7 +104,7 @@ var SPDrole= message.channel.server.roles.get('Specialized Protection Division',
 
   if (message.content === ";requestprotection") {
 	  message.delete();
-    ProtectChannel.send(SPDrole.mention() " Protectee" + (message.author) + " Is requesting protection at their server!");
+    ProtectChannel.send( "+ "SPDrole.mention() " Protectee" + (message.author) + " Is requesting protection at their server!");
   } else if (message.content === ";endprotection") {
 	  message.delete();
     ProtectChannel.send("@Specialized Protection Division " + "  Protectee" + (message.author) + " has ended their protection request and no longer requires protection!");
