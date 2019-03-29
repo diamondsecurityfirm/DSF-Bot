@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const newUsers = new Discord.Collection();
 const swearWords = ["fuck", "dick", "vagina", "pussy","nigger","asshole","bitch","bastard","queer","sex","slut","whore","jerk","jizz","cunt","crap","shit"];
+const Ats = ["@Dark_Dimensions"];
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -101,6 +102,9 @@ var roleschannel = channels.find("name", "role-request")
   }  else if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete();
  message.reply("Swearing is against Diamond Security Firm Policy");
+} else if( Ats.some(word => message.content.toLowerCase().includes(word)) ) {
+ message.delete();
+ message.reply("You are not allowed to tag the Chairman");
 } else if (message.content === ';knownthreats')
 	  message.reply({embed: {
     color: 3447003,
