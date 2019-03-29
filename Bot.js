@@ -94,10 +94,10 @@ var roleschannel = channels.find("name", "role-request")
 
   if (message.content === ";requestprotection") {
 	  message.delete();
-    ProtectChannel.send("@Specialized Protection Division" + " Protectee" + (message.author) + " Is requesting protection at their server!");
+    ProtectChannel.send("@Specialized Protection Division " + " Protectee" + (message.author) + " Is requesting protection at their server!");
   } else if (message.content === ";endprotection") {
 	  message.delete();
-    ProtectChannel.send("@Specialized Protection Division" + " Protectee" + (message.author) + " has ended their protection request and no longer requires protection!");
+    ProtectChannel.send("@Specialized Protection Division " + "  Protectee" + (message.author) + " has ended their protection request and no longer requires protection!");
   }  else if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete();
  message.reply("Swearing is against Diamond Security Firm Policy");
