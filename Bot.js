@@ -83,8 +83,15 @@ else if (message.content === '$rules')
   }
 });
 });
+
+
+
+
+
+
 // Protectee Commands, Anti-Swear
 client.on('message', message => {
+if(message.content == "mention") {
 
 let soruce = message
 let guild = message.guild
@@ -92,10 +99,13 @@ let channels = guild.channels
 var ProtectChannel = channels.find("name", "protection")
 var announcementchannel = channels.find("name", "announcements")
 var roleschannel = channels.find("name", "role-request")
+var SPDrole= message.channel.server.roles.get('Specialized Protection Division', 'SPDrole');
+
+
 
   if (message.content === ";requestprotection") {
 	  message.delete();
-    ProtectChannel.send("@Specialized Protection Division " + " Protectee" + (message.author) + " Is requesting protection at their server!");
+    ProtectChannel.send(SPDrole.mention() " Protectee" + (message.author) + " Is requesting protection at their server!");
   } else if (message.content === ";endprotection") {
 	  message.delete();
     ProtectChannel.send("@Specialized Protection Division " + "  Protectee" + (message.author) + " has ended their protection request and no longer requires protection!");
