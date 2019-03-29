@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const newUsers = new Discord.Collection();
 const swearWords = ["fuck", "dick", "vagina", "pussy","nigger","asshole","bitch","bastard","queer","sex","slut","whore","jerk","jizz","cunt","crap","shit"];
-const Ats = ["@Dark_Dimensions"];
+const Ats = ["@Dark_Dimensions#2896"];
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
