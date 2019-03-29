@@ -239,6 +239,8 @@ else if (message.content === '$roles')
     }
   }
 });
+});
+});
 
 //No swearing
 
