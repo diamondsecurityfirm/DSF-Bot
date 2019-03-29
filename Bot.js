@@ -102,7 +102,7 @@ var SPDrole= message.channel.server.roles.get('Specialized Protection Division',
 
 
 
-  if (message.content === ";requestprotection") {
+    if (message.content === ";requestprotection") {
 	  message.delete();
     ProtectChannel.send(SPDrole.mention() + " Protectee" + (message.author) + " Is requesting protection at their server!");
   } else if (message.content === ";endprotection") {
@@ -111,7 +111,7 @@ var SPDrole= message.channel.server.roles.get('Specialized Protection Division',
   }  else if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete();
  message.reply("Swearing is against Diamond Security Firm Policy");
-} else if (message.content === ';knownthreats')
+} else if (message.content === ';knownthreats') {
 	  message.reply({embed: {
     color: 3447003,
     author: {
@@ -136,8 +136,8 @@ var SPDrole= message.channel.server.roles.get('Specialized Protection Division',
       text: "© DSF"
     }
   }
-});
-else if (message.content === ';commands')
+})};
+else if (message.content === ';commands') {
 	  message.reply({embed: {
     color: 3447003,
     author: {
@@ -170,8 +170,8 @@ else if (message.content === ';commands')
       text: "© DSF"
     }
   }
-});
-else if (message.content === '$announcement')
+})};
+else if (message.content === '$announcement') {
 	  announcementchannel.send({embed: {
     color: 3447003,
     author: {
@@ -204,8 +204,8 @@ else if (message.content === '$announcement')
       text: "© DSF"
     }
   }
-});
-else if (message.content === '$roles')
+})};
+else if (message.content === '$roles') {
 	  roleschannel.send({embed: {
     color: 3447003,
     author: {
@@ -238,7 +238,7 @@ else if (message.content === '$roles')
       text: "© DSF"
     }
   }
-});
+})};
 
 //No swearing
 
