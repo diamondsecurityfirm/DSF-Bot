@@ -20,7 +20,7 @@ var ruleschannel = channels.find("name", "rules")
     message.reply('Here is the invite link! https://discord.gg/u59zCrR');
   } else if (message.content === ';backup') {
 	  message.delete();
-     myChannel.send("@Security Guard" + (message.author) + " Is requesting backup at their server!");
+     myChannel.send("@Security Guard @Senior Security Guard" + (message.author) + " Is requesting backup at their server!");
   } else if (message.content === '$information')
 	  InformationChannel.send({embed: {
     color: 3447003,
@@ -82,15 +82,8 @@ else if (message.content === '$rules')
   }
 });
 });
-
-
-
-
-
-
 // Protectee Commands, Anti-Swear
 client.on('message', message => {
-if(message.content == "mention") {
 
 let soruce = message
 let guild = message.guild
@@ -98,20 +91,17 @@ let channels = guild.channels
 var ProtectChannel = channels.find("name", "protection")
 var announcementchannel = channels.find("name", "announcements")
 var roleschannel = channels.find("name", "role-request")
-var SPDrole= message.channel.server.roles.get('Specialized Protection Division', 'SPDrole');
 
-
-
-     if (message.content === ";requestprotection") {
+  if (message.content === ";requestprotection") {
 	  message.delete();
-    ProtectChannel.send(SPDrole.mention() + " Protectee" + (message.author) + " Is requesting protection at their server!");
+    ProtectChannel.send("@Specialized Protection Division" + "Protectee" + (message.author) + " Is requesting protection at their server!");
   } else if (message.content === ";endprotection") {
 	  message.delete();
-    ProtectChannel.send("@Specialized Protection Division " + "  Protectee" + (message.author) + " has ended their protection request and no longer requires protection!");
+    ProtectChannel.send("@Specialized Protection Division" + "Protectee" + (message.author) + " has ended their protection request and no longer requires protection!");
   }  else if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete();
  message.reply("Swearing is against Diamond Security Firm Policy");
-} else if (message.content === ';knownthreats') {
+} else if (message.content === ';knownthreats')
 	  message.reply({embed: {
     color: 3447003,
     author: {
@@ -136,7 +126,8 @@ var SPDrole= message.channel.server.roles.get('Specialized Protection Division',
       text: "© DSF"
     }
   }
-})} else if (message.content === ';commands') {
+});
+else if (message.content === ';commands')
 	  message.reply({embed: {
     color: 3447003,
     author: {
@@ -169,7 +160,8 @@ var SPDrole= message.channel.server.roles.get('Specialized Protection Division',
       text: "© DSF"
     }
   }
-})} else if (message.content === '$announcement') {
+});
+else if (message.content === '$announcement')
 	  announcementchannel.send({embed: {
     color: 3447003,
     author: {
@@ -202,7 +194,8 @@ var SPDrole= message.channel.server.roles.get('Specialized Protection Division',
       text: "© DSF"
     }
   }
-})} else if (message.content === '$roles') {
+});
+else if (message.content === '$roles')
 	  roleschannel.send({embed: {
     color: 3447003,
     author: {
@@ -235,7 +228,8 @@ var SPDrole= message.channel.server.roles.get('Specialized Protection Division',
       text: "© DSF"
     }
   }
-})};
+});
+});
 
 //No swearing
 
