@@ -17,10 +17,10 @@ var InformationChannel = channels.find("name", "information")
 var ruleschannel = channels.find("name", "rules")
 
   if (message.content === ';invite') {
-    message.reply('Here is the invite link! https://discord.gg/u59zCrR');
+    message.reply('Here is the invite link! https://discord.gg/gsEy8vG');
   } else if (message.content === ';backup') {
 	  message.delete();
-     myChannel.send("@Security Guard @Senior Security Guard" + (message.author) + " Is requesting backup at their server!");
+     myChannel.send("@everyone" + (message.author) + " Is requesting backup at their server!");
   } else if (message.content === '$information')
 	  InformationChannel.send({embed: {
     color: 3447003,
@@ -94,10 +94,10 @@ var roleschannel = channels.find("name", "role-request")
 
   if (message.content === ";requestprotection") {
 	  message.delete();
-    ProtectChannel.send("@Specialized Protection Division" + "Protectee" + (message.author) + " Is requesting protection at their server!");
+    ProtectChannel.send("@everyone" + " Protectee" + (message.author) + " Is requesting protection at their server!");
   } else if (message.content === ";endprotection") {
 	  message.delete();
-    ProtectChannel.send("@Specialized Protection Division" + "Protectee" + (message.author) + " has ended their protection request and no longer requires protection!");
+    ProtectChannel.send("@everyone" + " Protectee" + (message.author) + " has ended their protection request and no longer requires protection!");
   }  else if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete();
  message.reply("Swearing is against Diamond Security Firm Policy");
