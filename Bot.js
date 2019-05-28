@@ -76,22 +76,26 @@ else if (message.content === '$rules')
     },
     title: "Server Rules",
     url: " ",
-    description: "This channel contains important server rules.",
+    description: "This channel contains our discord server rules.",
     fields: [{
         name: "Family Friendly",
-        value: "All channels are considard Family Friendly."
+        value: "All channels are considard Family Friendly meaning swearing is prohibited, NSFW is prohibited & anything that is deemed innapropriate is prohibited."
       },
       {
-        name: "Roblox Nickname",
-	  value: "Your nickname should be exactly as it appears on roblox."
+        name: "Rover",
+	  value: "You must be verified through rover with your primary roblox account used for NUSA."
       },
 	  {
-	   name: "Private issues and/or matters are private",
+	   name: "Argueing",
 	  value: "If you have a personal issue with someone else, do not bring it to the server, keep it elsewhere"
 	  },
 	  {
 	   name: "Professional at all times.",
-	  value: "You must remain professional and treat this discord like you are in a workplace, Use proper grammar!"
+	  value: "You must remain professional and treat this discord like you are in a workplace, Use proper grammar and be respectful to everyone."
+	  },
+	  {
+	   name: "Warning",
+	  value: "Breaking these rules may lead to a mute,kick or a ban from the discord server and from Diamond Security Firm"
 	  },
     ],
     timestamp: new Date(),
