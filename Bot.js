@@ -29,11 +29,31 @@ var ruleschannel = channels.find("name", "rules")
       icon_url: client.user.avatarURL
     },
     title: "Information",
-    url: "http://google.com",
-    description: "This channel contains important Information about resources within the Diamond Security Firm.",
+    url: " ",
+    description: "This channel contains important Information and resources related to Diamond Security Firm.",
     fields: [{
-        name: "Trello Boards",
-        value: "At Diamond Security Firm we have lot's of trello boards for many uses which you can find below."
+        name: "What is Diamond Security Firm & what do they do?",
+        value: "Diamond Security Firm is a privatly owned security company based in Washington D.C that provides security to contracted businesses and indivisuals that purchase a contract, We protect our clients and their property."
+      },			
+      {
+        name: "Does Diamond Security Firm protect everyone or certain people?",
+	  value: "Diamond Security Firm is avilable for anyone to purchase protection from as long as they are not a Federal Prisoner or are Arrest On Sight."
+      },
+      {
+        name: "What is the job dutites of an employee at Diamond Security Firm?",
+	  value: "The job dutites of an employee depends on their rank, Normal Security Guards are responsible for protecting contracted properties(Such as Wells Fargo Bank) & are also required to assist in securing protectee propeties when requested."
+      },
+      {
+        name: "Is Diamond Security Firm currently hiring?",
+	  value: "Diamond Security Firm is always on the lookout for new employees, We give priority hiring to those with military/Law Enforcement history. Job Applications can be found under our group games!"
+      },
+      {
+        name: "Does Diamond Security Firm protect everyone or certain people?",
+	  value: "Diamond Security Firm is avilable for anyone to purchase protection from as long as they are not a Federal Prisoner or are Arrest On Sight."
+      },
+      {
+        name: "Where can I report an abusive employee or protectee?",
+	  value: "Diamond Security Firm has a channel within the discord named (Public Relations Chat) where our Human Resource Department is able to work with you to investigate or fire an abusive employee or protectee."
       },
       {
         name: "Trello Links",
@@ -43,7 +63,7 @@ var ruleschannel = channels.find("name", "rules")
     timestamp: new Date(),
     footer: {
       icon_url: client.user.avatarURL,
-      text: "© DSF"
+      text: "© Diamond Security Firm"
     }
   }
 }); 
