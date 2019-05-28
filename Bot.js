@@ -75,11 +75,11 @@ else if (message.content === '$rules')
       icon_url: client.user.avatarURL
     },
     title: "Server Rules",
-    url: "http://google.com",
+    url: " ",
     description: "This channel contains important server rules.",
     fields: [{
-        name: "No Swearing",
-        value: "At Diamond Security Firm we wish to protect those who are under 13 by not allowing swear words."
+        name: "Family Friendly",
+        value: "All channels are considard Family Friendly."
       },
       {
         name: "Roblox Nickname",
@@ -109,7 +109,7 @@ let soruce = message
 let guild = message.guild
 let channels = guild.channels
 var ProtectChannel = channels.find("name", "protection")
-var announcementchannel = channels.find("name", "announcements")
+var mutechannel = channels.find("name", "muted")
 var roleschannel = channels.find("name", "role-request")
 
   if (message.content === ";requestprotection") {
@@ -181,31 +181,27 @@ else if (message.content === ';commands')
     }
   }
 });
-else if (message.content === '$announcement')
-	  announcementchannel.send({embed: {
+else if (message.content === '$muted')
+	  mutechannel.send({embed: {
     color: 3447003,
     author: {
       name: client.user.username,
       icon_url: client.user.avatarURL
     },
-    title: "Announcements",
+    title: "Muted",
     url: "http://google.com",
-    description: "After you are done announcing you must delete the announcement within 24 hours or risk suspension!",
+    description: "You have been muted, you can find information below.",
     fields: [{
-        name: "Rules",
-        value: "Below are the rules for announcements"
+        name: "Why am I muted?",
+        value: "You are muted due to you have failed to follow our #rules and therefore a moderator has placed you here."
       },
       {
-        name: "Off-topic",
-	  value: "If your announcement is not related to NUSA or it is an announcement for a campaign you may not post it."
+        name: "How do I get unmuted?",
+	  value: "You will need to contact a Human Resource Officer or higher to be unmuted."
       },
 	  {
-        name: "On-topic",
-	  value: "You may post any announcement related to Diamond Security Firm and NUSA (If important)."
-      },
-	  {
-        name: "Swearing",
-	  value: "As per server rules you may not use swear words in your announcement."
+        name: "What can I do while muted?",
+	  value: "You cannot do anything while muted."
       },
     ],
     timestamp: new Date(),
