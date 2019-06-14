@@ -112,7 +112,7 @@ client.on('message', message => {
 let soruce = message
 let guild = message.guild
 let channels = guild.channels
-var ProtectChannel = channels.find("name", "protection")
+var ProtectChannel = channels.find("name", "protection-request")
 var mutechannel = channels.find("name", "muted")
 var roleschannel = channels.find("name", "role-request")
 
