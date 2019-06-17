@@ -17,7 +17,7 @@ var InformationChannel = channels.find("name", "information")
 var ruleschannel = channels.find("name", "rules")
 
   if (message.content === ';invite') {
-    message.reply('Here is the invite link! https://discord.gg/gsEy8vG');
+    message.reply('Here is the invite link! https://discord.gg/RcRNcSQ');
   } else if (message.content === ';backup') {
 	  message.delete();
      myChannel.send("@everyone" + (message.author) + " Is requesting backup at their server!");
