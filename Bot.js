@@ -186,5 +186,5 @@ else if (message.content === ';commands')
   }
 });
 
-
 client.login(process.env.BOT_TOKEN);
+
