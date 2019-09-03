@@ -58,7 +58,7 @@ var ruleschannel = channels.find("name", "rules")
     timestamp: new Date(),
     footer: {
       icon_url: client.user.avatarURL,
-      text: "© The Washington Mafia
+      text: "© The Washington Mafia"
     }
   }
 }); 
