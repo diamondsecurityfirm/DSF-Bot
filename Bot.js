@@ -162,32 +162,5 @@ client.on('message', message => {
                         }
                     }
                 });
-            else if (message.content === ';commands')
-                message.reply({
-                    embed: {
-                        color: 3447003,
-                        author: {
-                            name: client.user.username,
-                            icon_url: client.user.avatarURL
-                        },
-                        title: "Bot Commands",
-                        url: "",
-                        description: "Here are the current commands!",
-                        fields: [{
-                                name: ";Roblist",
-                                value: "Replies with a list of people to rob."
-                            },
-                            {
-                                name: ";Raidlist",
-                                value: "Replies with a list of people to raid."
-                            },
-                        ],
-                        timestamp: new Date(),
-                        footer: {
-                            icon_url: client.user.avatarURL,
-                            text: "© The Washington Mafia"
-                          }
-                      }
-                  })
 
             client.login(process.env.BOT_TOKEN);
