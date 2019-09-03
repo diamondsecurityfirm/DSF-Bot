@@ -1,18 +1,23 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const newUsers = new Discord.Collection();
+var prefix = ";";
 const swearWords = ["fuck", "dick", "vagina", "pussy", "nigger", "asshole", "bitch", "bastard", "queer", "sex", "slut", "whore", "jerk", "jizz", "cunt", "crap", "shit"];
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
+
 // General commands
-client.on('message', message => {
+client.on("message", (message) => {
+    if (message.author.bot) return; // Dont answer yourself.
+    var args = message.content.split(/[ ]+/)
 
     let soruce = message
     let guild = message.guild
     let channels = guild.channels
     var InformationChannel = channels.find("name", "information")
+    var logchannel = channels.find("name", "admin-logs")
 
     if (message.content === '$information')
         InformationChannel.send({
@@ -111,7 +116,7 @@ client.on('message', message => {
             if (swearWords.some(word => message.content.toLowerCase().includes(word))) {
                 message.delete();
                 message.reply("Swearing is not allowed in text channels");
-            } else if (message.content === ';Roblist')
+            } else if (isCommand("Roblist", message)) {
                 message.reply({
                     embed: {
                         color: 3447003,
@@ -137,8 +142,8 @@ client.on('message', message => {
                             text: "© The Washington Mafia"
                         }
                     }
-                });
-            else if (message.content === ';Raidlist')
+                })
+            } else if (isCommand("Raidlist", message)) {
                 message.reply({
                     embed: {
                         color: 3447003,
@@ -159,7 +164,8 @@ client.on('message', message => {
                             text: "© The Washington Mafia"
                         }
                     }
-                });  else if (message.content === ';commands')
+                })
+            }  else if (message.content === ';commands')
                 message.reply({
                     embed: {
                         color: 3447003,
