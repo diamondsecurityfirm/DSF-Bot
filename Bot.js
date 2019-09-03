@@ -16,12 +16,7 @@ var myChannel = channels.find("name", "backup")
 var InformationChannel = channels.find("name", "information")
 var ruleschannel = channels.find("name", "rules")
 
-  if (message.content === ';invite') {
-    message.reply('Here is the invite link! https://discord.gg/RcRNcSQ');
-  } else if (message.content === ';backup') {
-	  message.delete();
-     myChannel.send("@everyone" + (message.author) + " Is requesting backup at their server!");
-  } else if (message.content === '$information')
+ if (message.content === '$information')
 	  InformationChannel.send({embed: {
     color: 3447003,
     author: {
@@ -30,40 +25,40 @@ var ruleschannel = channels.find("name", "rules")
     },
     title: "Information",
     url: " ",
-    description: "This channel contains important Information and resources related to Diamond Security Firm.",
+    description: "This channel contains important Information and resources related to The Washington Mafia.",
     fields: [{
-        name: "What is Diamond Security Firm & what do they do?",
-        value: "Diamond Security Firm is a privatly owned security company based in Washington D.C that provides security to contracted businesses and indivisuals that purchase a contract, We protect our clients and their property."
+        name: "What is the washington mafia?",
+        value: "The Washington Mafia is one of the crime families within the state of washington."
       },			
       {
-        name: "Does Diamond Security Firm protect everyone or certain people?",
-	  value: "Diamond Security Firm is avilable for anyone to purchase protection from as long as they are not a Federal Prisoner or are Arrest On Sight."
+        name: "What does The Washington Mafia do?",
+	  value: "The Washington Mafia conducts raids and robberies throughout the state of washington and tries to control the underground."
       },
       {
-        name: "What is the job dutites of an employee at Diamond Security Firm?",
-	  value: "The job dutites of an employee depends on their rank, Normal Security Guards are responsible for protecting contracted properties(Such as Wells Fargo Bank) & are also required to assist in securing protectee propeties when requested."
+        name: "How do I become apart of the Family?",
+	  value: "Become friends with the Boss and earn the mafia's trust and respect by doing jobs for us."
       },
       {
-        name: "Is Diamond Security Firm currently hiring?",
-	  value: "Diamond Security Firm is always on the lookout for new employees, We give priority hiring to those with military/Law Enforcement history. Job Applications can be found under our group games!"
+        name: "How do I know if I'm part of the Mafia?",
+	  value: "You will have a the role Mafia Member under your name in this discord."
       },
       {
-        name: "Does Diamond Security Firm protect everyone or certain people?",
-	  value: "Diamond Security Firm is avilable for anyone to purchase protection from as long as they are not a Federal Prisoner or are Arrest On Sight."
+        name: "What are the ranks of the mafia and what does each rank do?",
+	  value: "If you are part of the Mafia you will be able to check #RankStructure channel."
       },
       {
-        name: "Where can I report an abusive employee or protectee?",
-	  value: "Diamond Security Firm has a channel within the discord named (Public Relations Chat) where our Human Resource Department is able to work with you to investigate or fire an abusive employee or protectee."
+        name: "Can I hire the mafia to do my dity work?",
+	  value: "The mafia will do almost anything for the right price."
       },
       {
-        name: "Trello Links",
-	  value: "[Main Board](https://trello.com/b/6sLI6fYh/dsf-main-board) [Human Resources](https://trello.com/b/DNvLH1Lo/diamond-security-firm-human-resoruces) | [Promotion Points](https://trello.com/b/2bcmzCVY/diamond-security-firm-promotion-board) | [Training & Education](https://trello.com/b/LwTSTcPN/diamond-security-firm-training-education)  "
+        name: "What happens to people who doublecross/betray the mafia?",
+	  value: "The mafia will make their life, lets say uncomfortable until they pay for what they have done."
       },
     ],
     timestamp: new Date(),
     footer: {
       icon_url: client.user.avatarURL,
-      text: "© Diamond Security Firm"
+      text: "© The Washington Mafia
     }
   }
 }); 
@@ -74,80 +69,93 @@ else if (message.content === '$rules')
       name: client.user.username,
       icon_url: client.user.avatarURL
     },
-    title: "Server Rules",
+    title: "Mafia Creed and Rules",
     url: " ",
-    description: "This channel contains our discord server rules.",
+    description: "This channel contains the mafia creed and rules.",
     fields: [{
-        name: "Family Friendly",
-        value: "All channels are considard Family Friendly meaning swearing is prohibited, NSFW is prohibited & anything that is deemed innapropriate is prohibited."
+        name: "Mafia Creed",
+        value: "As a member of the mafia I will risk my life and all my proptery to protect the Mafia and it's intrests & will alert the Boss of anything that may bring harm to the mafia."
       },
       {
-        name: "Rover",
-	  value: "You must be verified through rover with your primary roblox account used for NUSA."
+        name: "Chain of Command",
+	  value: "I will listen to anyone who is of higher rank to me and will report any issues/concerns to a Captain who will in turn report it to the Underboss."
       },
 	  {
 	   name: "Argueing",
-	  value: "If you have a personal issue with someone else, do not bring it to the server, keep it elsewhere"
+	  value: "If you have a personal issue with someone else, either settle the issue or get out of the mafia."
 	  },
 	  {
-	   name: "Professional at all times.",
-	  value: "You must remain professional and treat this discord like you are in a workplace, Use proper grammar and be respectful to everyone."
+	   name: "Secrets remain secrets",
+	  value: "Secrets are to remain within the mafia and nowhere else, examples of secrets is [Mafia's Base location, who is in the mafia, planned raids/robberies]."
 	  },
 	  {
-	   name: "Warning",
-	  value: "Breaking these rules may lead to a mute,kick or a ban from the discord server and from Diamond Security Firm"
+	   name: "Spying",
+	  value: "If caught spying on the Mafia or releasing secrets you will be banned from the mafia and all your bases will be raided, you will be hunted every day."
 	  },
     ],
     timestamp: new Date(),
     footer: {
       icon_url: client.user.avatarURL,
-      text: "© DSF"
+      text: "© The Washington Mafia"
     }
   }
 });
 });
-// Protectee Commands, Anti-Swear
+//Anti-Swear
 client.on('message', message => {
 
 let soruce = message
 let guild = message.guild
 let channels = guild.channels
-var ProtectChannel = channels.find("name", "protection-request")
-var mutechannel = channels.find("name", "muted")
-var roleschannel = channels.find("name", "role-request")
 
-  if (message.content === ";requestprotection") {
-	  message.delete();
-    ProtectChannel.send("@everyone" + " Protectee" + (message.author) + " Is requesting protection at their server!");
-  } else if (message.content === ";endprotection") {
-	  message.delete();
-    ProtectChannel.send("@everyone" + " Protectee" + (message.author) + " has ended their protection request and no longer requires protection!");
-  }  else if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
+if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete();
- message.reply("Swearing is against Diamond Security Firm Policy");
-} else if (message.content === ';knownthreats')
+ message.reply("Swearing is not allowed in text channels");
+} else if (message.content === ';Roblist')
 	  message.reply({embed: {
     color: 3447003,
     author: {
       name: client.user.username,
       icon_url: client.user.avatarURL
     },
-    title: "Known Threats",
-    url: "http://google.com",
-    description: "Here are the current known threats " + (message.author) + ".",
+    title: "Mafia Rob List",
+    url: "",
+    description: "Here is the current list of people to rob " + (message.author) + " also make sure to send the Boss a photo/video of the completed robbery.",
     fields: [{
-        name: "Horsiee",
-        value: "Declared a known threat for attacking multiple Protectees & killing 3 Security Guards"
+        name: "[BH] Bambi",
+        value: "Bambi is a member of [BH] and also arrested the Boss, is to be robbed for everything you can rob him for"
       },
       {
-        name: "Add username here!",
-	  value: "Add description here!"
+        name: "Yuki",
+	  value: "Swat Officer who assisted in the arrest of the Boss, is to be robbed for everything you can rob him for"
       },
     ],
     timestamp: new Date(),
     footer: {
       icon_url: client.user.avatarURL,
-      text: "© DSF"
+      text: "© The Washington Mafia"
+    }
+  }
+});
+	else if (message.content === ';Raidlist')
+	  message.reply({embed: {
+    color: 3447003,
+    author: {
+      name: client.user.username,
+      icon_url: client.user.avatarURL
+    },
+    title: "Mafia Raid List",
+    url: "",
+    description: "Here is the current list of people to raid " + (message.author) + " also make sure to send the Boss a photo/video of the completed raid & loot.",
+    fields: [{
+        name: "[BH] Bambi",
+        value: "Bambi is a member of [BH] and also arrested the Boss, his base is to be found and raided, take all the loot to loot room for mafia stockpile"
+      },
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: client.user.avatarURL,
+      text: "© The Washington Mafia"
     }
   }
 });
@@ -159,23 +167,15 @@ else if (message.content === ';commands')
       icon_url: client.user.avatarURL
     },
     title: "Bot Commands",
-    url: "http://google.com",
+    url: "",
     description: "Here are the current commands!",
     fields: [{
-        name: ";knownthreats",
-        value: "Replies with a list of known threats."
+        name: ";Roblist",
+        value: "Replies with a list of people to rob."
       },
       {
-        name: ";backup",
-	  value: "Requests backup in #backup"
-      },
-	  {
-        name: ";requestprotection",
-	  value: "Allows Protectees to request protection at their server."
-      },
-	  {
-        name: ";invite",
-	  value: "Gives you an invite code for the server."
+        name: ";Raidlist",
+	  value: "Replies with a list of people to raid."
       },
     ],
     timestamp: new Date(),
@@ -185,74 +185,6 @@ else if (message.content === ';commands')
     }
   }
 });
-else if (message.content === '$muted')
-	  mutechannel.send({embed: {
-    color: 3447003,
-    author: {
-      name: client.user.username,
-      icon_url: client.user.avatarURL
-    },
-    title: "Muted",
-    url: "http://google.com",
-    description: "You have been muted, you can find information below.",
-    fields: [{
-        name: "Why am I muted?",
-        value: "You are muted due to you have failed to follow our #rules and therefore a moderator has placed you here."
-      },
-      {
-        name: "How do I get unmuted?",
-	  value: "You will need to contact a Human Resource Officer or higher to be unmuted."
-      },
-	  {
-        name: "What can I do while muted?",
-	  value: "You cannot do anything while muted."
-      },
-    ],
-    timestamp: new Date(),
-    footer: {
-      icon_url: client.user.avatarURL,
-      text: "© DSF"
-    }
-  }
-});
-else if (message.content === '$roles')
-	  roleschannel.send({embed: {
-    color: 3447003,
-    author: {
-      name: client.user.username,
-      icon_url: client.user.avatarURL
-    },
-    title: "role-request",
-    url: "http://google.com",
-    description: "This channel is only for requesting roles, freely speaking will lead to a suspension/server ban!",
-    fields: [{
-        name: "Format",
-        value: "Use the format below, do not speak within the channel except for role requests!"
-      },
-      {
-        name: "Roblox Username",
-	  value: "This is so we can change your nickname on the server."
-      },
-	  {
-        name: "Roblox Profile Link",
-	  value: "This is so we can perform a background check on you."
-      },
-	  {
-        name: "Rank in group",
-	  value: "This is used to put you as the correct rank, lying will lead to Blacklist from Diamond Security Firm!"
-      },
-    ],
-    timestamp: new Date(),
-    footer: {
-      icon_url: client.user.avatarURL,
-      text: "© DSF"
-    }
-  }
-});
-});
-
-//No swearing
 
 
 client.login(process.env.BOT_TOKEN);
-
