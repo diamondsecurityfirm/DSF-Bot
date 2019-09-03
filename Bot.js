@@ -12,9 +12,7 @@ client.on('message', message => {
     let soruce = message
     let guild = message.guild
     let channels = guild.channels
-    var myChannel = channels.find("name", "backup")
     var InformationChannel = channels.find("name", "information")
-    var ruleschannel = channels.find("name", "rules")
 
     if (message.content === '$information')
         InformationChannel.send({
