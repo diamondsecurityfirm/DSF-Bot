@@ -186,8 +186,8 @@ client.on('message', message => {
                         footer: {
                             icon_url: client.user.avatarURL,
                             text: "© The Washington Mafia"
-                        }
-                    }
-                });
+                          }
+                      }
+                  })
 
             client.login(process.env.BOT_TOKEN);
