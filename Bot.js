@@ -24,6 +24,7 @@ client.on("message", (message) => {
     let channels = guild.channels
     var InformationChannel = channels.find("name", "information")
     var logchannel = channels.find("name", "admin-logs")
+    var ruleschannel = channels.find("name", "rules")
 
     if (message.content === '$information')
         InformationChannel.send({
