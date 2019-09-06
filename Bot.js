@@ -8,6 +8,12 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
+function isCommand(command, message) {
+    var command = command.toLowerCase();
+    var content = message.content.toLowerCase();
+    return content.startsWith(prefix + command);
+}
+
 // General commands
 client.on("message", (message) => {
     if (message.author.bot) return; // Dont answer yourself.
