@@ -22,58 +22,10 @@ client.on("message", (message) => {
     let soruce = message
     let guild = message.guild
     let channels = guild.channels
-    var InformationChannel = channels.find("name", "information")
-    var logchannel = channels.find("name", "admin-logs")
     var ruleschannel = channels.find("name", "rules")
 
-    if (message.content === '$information')
-        InformationChannel.send({
-            embed: {
-                color: 3447003,
-                author: {
-                    name: client.user.username,
-                    icon_url: client.user.avatarURL
-                },
-                title: "Information",
-                url: " ",
-                description: "This channel contains important Information and resources related to The Washington Mafia.",
-                fields: [{
-                        name: "What is the washington mafia?",
-                        value: "The Washington Mafia is one of the crime families within the state of washington."
-                    },
-                    {
-                        name: "What does The Washington Mafia do?",
-                        value: "The Washington Mafia conducts raids and robberies throughout the state of washington and tries to control the underground."
-                    },
-                    {
-                        name: "How do I become apart of the Family?",
-                        value: "Become friends with the Boss and earn the mafia's trust and respect by doing jobs for us."
-                    },
-                    {
-                        name: "How do I know if I'm part of the Mafia?",
-                        value: "You will have a the role Mafia Member under your name in this discord."
-                    },
-                    {
-                        name: "What are the ranks of the mafia and what does each rank do?",
-                        value: "If you are part of the Mafia you will be able to check #RankStructure channel."
-                    },
-                    {
-                        name: "Can I hire the mafia to do my dity work?",
-                        value: "The mafia will do almost anything for the right price."
-                    },
-                    {
-                        name: "What happens to people who doublecross/betray the mafia?",
-                        value: "The mafia will make their life, lets say uncomfortable until they pay for what they have done."
-                    },
-                ],
-                timestamp: new Date(),
-                footer: {
-                    icon_url: client.user.avatarURL,
-                    text: "© The Washington Mafia"
-                }
-            }
-        });
-    else if (message.content === '$rules')
+    
+    if (message.content === '$rules')
         ruleschannel.send({
             embed: {
                 color: 3447003,
@@ -81,34 +33,34 @@ client.on("message", (message) => {
                     name: client.user.username,
                     icon_url: client.user.avatarURL
                 },
-                title: "Mafia Creed and Rules",
+                title: "Discord Rules",
                 url: " ",
                 description: "This channel contains the mafia creed and rules.",
                 fields: [{
-                        name: "Mafia Creed",
-                        value: "As a member of the mafia I will risk my life and all my proptery to protect the Mafia and it's intrests & will alert the Boss of anything that may bring harm to the mafia."
+                        name: "Bullying",
+                        value: "Bullying of any kind if prohibited on the Diamond Security Discord, Any form of bullying will result in being banned fron the discord and blacklisted from Diamond Security Firm."
                     },
                     {
-                        name: "Chain of Command",
-                        value: "I will listen to anyone who is of higher rank to me and will report any issues/concerns to a Captain who will in turn report it to the Underboss."
+                        name: "Professionalism",
+                        value: "Anybody who uses the Diamond Security Discord must act in a professional workplace manner, Those who fail to do so will be fired or kicked from the discord."
                     },
                     {
-                        name: "Argueing",
-                        value: "If you have a personal issue with someone else, either settle the issue or get out of the mafia."
+                        name: "Nicknames",
+                        value: "Your server nickname must match your Roblox username."
                     },
                     {
-                        name: "Secrets remain secrets",
-                        value: "Secrets are to remain within the mafia and nowhere else, examples of secrets is [Mafia's Base location, who is in the mafia, planned raids/robberies]."
+                        name: "Bot commands",
+                        value: "All bot commands are to be used in #Bot-Commands"
                     },
                     {
-                        name: "Spying",
-                        value: "If caught spying on the Mafia or releasing secrets you will be banned from the mafia and all your bases will be raided, you will be hunted every day."
+                        name: "No speaking over each other",
+                        value: "You must respect each person while they are speaking in a Voice Chat by not speaking over them while they are speaking."
                     },
                 ],
                 timestamp: new Date(),
                 footer: {
                     icon_url: client.user.avatarURL,
-                    text: "© The Washington Mafia"
+                    text: "© DSF"
                 }
             }
         });
@@ -122,8 +74,8 @@ client.on('message', message => {
 
             if (swearWords.some(word => message.content.toLowerCase().includes(word))) {
                 message.delete();
-                message.reply("Swearing is not allowed in text channels");
-            } else if (isCommand("Roblist", message)) {
+                message.reply("Swearing is not allowed in Diamond Security Discord");
+            } else if (isCommand("Threatlist", message)) {
                 message.reply({
                     embed: {
                         color: 3447003,
@@ -131,26 +83,22 @@ client.on('message', message => {
                             name: client.user.username,
                             icon_url: client.user.avatarURL
                         },
-                        title: "Mafia Rob List",
+                        title: "Threat List",
                         url: "",
-                        description: "Here is the current list of people to rob " + (message.author) + " also make sure to send the Boss a photo/video of the completed robbery.",
+                        description: "Here is the current list of known threats " + (message.author) + ".",
                         fields: [{
-                                name: "[BH] Bambi",
-                                value: "Bambi is a member of [BH] and also arrested the Boss, is to be robbed for everything you can rob him for"
-                            },
-                            {
-                                name: "Yuki",
-                                value: "Swat Officer who assisted in the arrest of the Boss, is to be robbed for everything you can rob him for"
+                                name: "Enter name here",
+                                value: "Enter Description here."
                             },
                         ],
                         timestamp: new Date(),
                         footer: {
                             icon_url: client.user.avatarURL,
-                            text: "© The Washington Mafia"
+                            text: "© DSF"
                         }
                     }
                 })
-            } else if (isCommand("Raidlist", message)) {
+               } else if (isCommand("Threatlist", message)) {
                 message.reply({
                     embed: {
                         color: 3447003,
@@ -158,21 +106,22 @@ client.on('message', message => {
                             name: client.user.username,
                             icon_url: client.user.avatarURL
                         },
-                        title: "Mafia Raid List",
+                        title: "Threat List",
                         url: "",
-                        description: "Here is the current list of people to raid " + (message.author) + " also make sure to send the Boss a photo/video of the completed raid & loot.",
+                        description: "Here is the current list of known threats " + (message.author) + ".",
                         fields: [{
-                            name: "[BH] Bambi",
-                            value: "Bambi is a member of [BH] and also arrested the Boss, his base is to be found and raided, take all the loot to loot room for mafia stockpile"
-                        }, ],
+                                name: "Enter name here",
+                                value: "Enter Description here."
+                            },
+                        ],
                         timestamp: new Date(),
                         footer: {
                             icon_url: client.user.avatarURL,
-                            text: "© The Washington Mafia"
+                            text: "© DSF"
                         }
                     }
                 })
-            }  else if (message.content === ';commands')
+            } else if (isCommand("Commands", message)) {
                 message.reply({
                     embed: {
                         color: 3447003,
@@ -182,23 +131,22 @@ client.on('message', message => {
                         },
                         title: "Bot Commands",
                         url: "",
-                        description: "Here are the current commands!",
+                        description: "Here is a list of all bot commands that can be used" + (message.author) + " also please ensure to use #bot-commands.",
                         fields: [{
-                                name: ";Roblist",
-                                value: "Replies with a list of people to rob."
-                            },
-                            {
-                                name: ";Raidlist",
-                                value: "Replies with a list of people to raid."
-                            },
-                        ],
+                            name: "Threatlist",
+                            value: "Displays a list of threats to Diamond Security Firm Protectees"
+                        }, 
+                        {
+                            name: "Threatlist",
+                            value: "Displays a list of threats to Diamond Security Firm Protectees"
+                        }, 
+                      ],
                         timestamp: new Date(),
                         footer: {
                             icon_url: client.user.avatarURL,
                             text: "© The Washington Mafia"
                         }
                     }
-                });
-    
+                })
 });
             client.login(process.env.BOT_TOKEN);
