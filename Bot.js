@@ -98,6 +98,8 @@ client.on('message', message => {
                         }
                     }
                 })
+               } else if (isCommand("Invite", message)) {
+                message.reply("Here is the invite code you have requested. https://discord.gg/AGdECFY");
                } else if (isCommand("Threatlist", message)) {
                 message.reply({
                     embed: {
@@ -137,14 +139,14 @@ client.on('message', message => {
                             value: "Displays a list of threats to Diamond Security Firm Protectees"
                         }, 
                         {
-                            name: "Threatlist",
-                            value: "Displays a list of threats to Diamond Security Firm Protectees"
+                            name: "Invite",
+                            value: "Displays a invite code for the Diamond Security Firm Discord."
                         }, 
                       ],
                         timestamp: new Date(),
                         footer: {
                             icon_url: client.user.avatarURL,
-                            text: "© The Washington Mafia"
+                            text: "© DSF"
                         }
                     }
                 })
