@@ -64,7 +64,6 @@ client.on("message", (message) => {
                 }
             }
         });
-});
 //Anti-Swear
 client.on('message', message => {
 
@@ -148,5 +147,5 @@ client.on('message', message => {
                         }
                     }
                 })
-            };
+});
     client.login(process.env.BOT_TOKEN);
