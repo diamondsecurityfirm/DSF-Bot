@@ -24,7 +24,7 @@ client.on("message", (message) => {
     let channels = guild.channels
     var ruleschannel = channels.find("name", "rules")
 
-    
+
     if (message.content === '$rules')
         ruleschannel.send({
             embed: {
@@ -87,10 +87,9 @@ client.on('message', message => {
                         url: "",
                         description: "Here is the current list of known threats " + (message.author) + ".",
                         fields: [{
-                                name: "Enter name here",
-                                value: "Enter Description here."
-                            },
-                        ],
+                            name: "Enter name here",
+                            value: "Enter Description here."
+                        }, ],
                         timestamp: new Date(),
                         footer: {
                             icon_url: client.user.avatarURL,
@@ -98,9 +97,9 @@ client.on('message', message => {
                         }
                     }
                 })
-               } else if (isCommand("Invite", message)) {
+            } else if (isCommand("Invite", message)) {
                 message.reply("Here is the invite code you have requested. https://discord.gg/AGdECFY");
-               } else if (isCommand("Threatlist", message)) {
+            } else if (isCommand("Threatlist", message)) {
                 message.reply({
                     embed: {
                         color: 3447003,
@@ -112,10 +111,9 @@ client.on('message', message => {
                         url: "",
                         description: "Here is the current list of known threats " + (message.author) + ".",
                         fields: [{
-                                name: "Enter name here",
-                                value: "Enter Description here."
-                            },
-                        ],
+                            name: "Enter name here",
+                            value: "Enter Description here."
+                        }, ],
                         timestamp: new Date(),
                         footer: {
                             icon_url: client.user.avatarURL,
@@ -135,14 +133,14 @@ client.on('message', message => {
                         url: "",
                         description: "Here is a list of all bot commands that can be used" + (message.author) + " also please ensure to use #bot-commands.",
                         fields: [{
-                            name: "Threatlist",
-                            value: "Displays a list of threats to Diamond Security Firm Protectees"
-                        }, 
-                        {
-                            name: "Invite",
-                            value: "Displays a invite code for the Diamond Security Firm Discord."
-                        }, 
-                      ],
+                                name: "Threatlist",
+                                value: "Displays a list of threats to Diamond Security Firm Protectees"
+                            },
+                            {
+                                name: "Invite",
+                                value: "Displays a invite code for the Diamond Security Firm Discord."
+                            },
+                        ],
                         timestamp: new Date(),
                         footer: {
                             icon_url: client.user.avatarURL,
@@ -150,4 +148,4 @@ client.on('message', message => {
                         }
                     }
                 })
-            client.login(process.env.BOT_TOKEN);
+            }); client.login(process.env.BOT_TOKEN);
