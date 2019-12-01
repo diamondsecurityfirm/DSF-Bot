@@ -61,9 +61,9 @@ client.on("message", (message) => {
                 footer: {
                     icon_url: client.user.avatarURL,
                     text: "© DSF"
+                  }
                 }
-            }
-        });
+            })
 //Anti-Swear
 client.on('message', message => {
 
@@ -147,5 +147,5 @@ client.on('message', message => {
                         }
                     }
                 })
-});
+}
     client.login(process.env.BOT_TOKEN);
