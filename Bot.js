@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const newUsers = new Discord.Collection();
-const swearWords = ["fuck", "dick", "vagina", "pussy","nigger","asshole","fzuck","bitch","bastard","queer","sex","slut","whore","jerk","jizz","cunt","crap","shit"];
+const swearWords = ["fuck", "dick", "vagina", "pussy","nigger","faggot","cocksucker","asshole","fzuck","bitch","bastard","queer","sex","slut","whore","jerk","jizz","cunt","crap","shit"];
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
