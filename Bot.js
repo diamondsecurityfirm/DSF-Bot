@@ -89,7 +89,7 @@ else if (isCommand("Kick", message)) {
         const embed = new Discord.RichEmbed()
             .setTitle("Kicked User log")
             .setAuthor("Diamond Security Firm Bot", "https://cdn.discordapp.com/attachments/326761725875585025/589144795939602477/Untitled.png")
-            .setColor(6FA8DC)
+            .setColor(0x6FA8DC)
             .setDescription("This is a bot produced log for the ;kick command.")
             .setFooter("A user has been kicked", "https://cdn.discordapp.com/attachments/326761725875585025/589144795939602477/Untitled.png")
             .setTimestamp()
