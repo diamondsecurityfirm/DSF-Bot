@@ -192,7 +192,7 @@ var roleschannel = channels.find("name", "role-request")
     }
   }
 });
-else if (isCommand("Commands","cmds", message))
+else if (isCommand("Commands", message))
 	  message.reply({embed: {
     color: 3447003,
     author: {
