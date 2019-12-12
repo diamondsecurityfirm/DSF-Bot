@@ -28,10 +28,10 @@ var ruleschannel = channels.find("name", "rules")
 var logchannel = channels.find("name", "discord-logs")
 
   if (isCommand("invite", message)) {
-    message.reply('Here is the invite link! https://discord.gg/RcRNcSQ');
+    message.reply('Here is the invite link! https://discord.gg/ve3K8g9');
   } else if (isCommand("backup", message)) {
 	  message.delete();
-     myChannel.send("@everyone" + (message.author) + " Is requesting backup at their server!");
+     myChannel.send("@here" + (message.author) + " Is requesting backup at their server!");
   } else if (message.content === '$information')
 	  InformationChannel.send({embed: {
     color: 3447003,
