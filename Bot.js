@@ -220,7 +220,7 @@ else if (isCommand("Commands", message))
       },
 	  {
         name: ";kick @username",
-	  value: "Kicks the mentioned user from the discord."
+	  value: "Kicks the mentioned user from the discord, Must be Board of Directors or higher to execute."
       },
     ],
     timestamp: new Date(),
