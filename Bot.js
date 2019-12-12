@@ -1,13 +1,23 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const newUsers = new Discord.Collection();
+var prefix = ";";
 const swearWords = ["fuck", "dick", "vagina", "pussy","nigger","faggot","cocksucker","asshole","fzuck","bitch","bastard","queer","sex","slut","whore","jerk","jizz","cunt","crap","shit"];
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
+
+function isCommand(command, message) {
+    var command = command.toLowerCase();
+    var content = message.content.toLowerCase();
+    return content.startsWith(prefix + command);
+}
+
 // General commands
 client.on('message', message => {
+    if (message.author.bot) return; // Dont answer yourself.
+    var args = message.content.split(/[ ]+/)
 	
 let soruce = message
 let guild = message.guild
@@ -15,10 +25,11 @@ let channels = guild.channels
 var myChannel = channels.find("name", "backup")
 var InformationChannel = channels.find("name", "information")
 var ruleschannel = channels.find("name", "rules")
+var logchannel = channels.find("name", "discord-logs")
 
-  if (message.content === ';invite') {
+  if (isCommand("invite", message)) {
     message.reply('Here is the invite link! https://discord.gg/RcRNcSQ');
-  } else if (message.content === ';backup') {
+  } else if (isCommand("backup", message)) {
 	  message.delete();
      myChannel.send("@everyone" + (message.author) + " Is requesting backup at their server!");
   } else if (message.content === '$information')
@@ -67,6 +78,36 @@ var ruleschannel = channels.find("name", "rules")
     }
   }
 }); 
+else if (isCommand("Kick", message)) {
+        let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+        if (!kUser) return message.channel.send("Can't find user!");
+        let kReason = args.join(" ").slice(22);
+        if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You do not have permisson to kick this person!");
+        if (kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
+        message.delete();
+
+        const embed = new Discord.RichEmbed()
+            .setTitle("Kicked User log")
+            .setAuthor("Diamond Security Firm Bot", "https://cdn.discordapp.com/attachments/326761725875585025/589144795939602477/Untitled.png")
+            .setColor(0x00AE86)
+            .setDescription("This is a bot produced log for the ;kick command.")
+            .setFooter("A user has been kicked", "https://cdn.discordapp.com/attachments/326761725875585025/589144795939602477/Untitled.png")
+            .setTimestamp()
+            .setURL("https://www.roblox.com/groups/2858260/Diamond-Security-Firm#!/about")
+            .addField("Kicked User", `${kUser} with ID ${kUser.id}`)
+            .addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
+            .addField("Kicked In", message.channel)
+            .addField("Reason", kReason);
+
+        if (!logchannel) return message.channel.send("Can't find admin-logs channel.");
+
+        message.guild.member(kUser).kick(kReason);
+        logchannel.send({
+            embed
+        })
+
+        return;
+    }
 else if (message.content === '$rules')
 	  ruleschannel.send({embed: {
     color: 3447003,
@@ -116,16 +157,16 @@ var ProtectChannel = channels.find("name", "protection-request")
 var mutechannel = channels.find("name", "muted")
 var roleschannel = channels.find("name", "role-request")
 
-  if (message.content === ";requestprotection") {
+  if (isCommand("requestprotection", message)) {
 	  message.delete();
     ProtectChannel.send("@everyone" + " Protectee" + (message.author) + " Is requesting protection at their server!");
-  } else if (message.content === ";endprotection") {
+  } else if (isCommand("endprotection", message)) {
 	  message.delete();
     ProtectChannel.send("@everyone" + " Protectee" + (message.author) + " has ended their protection request and no longer requires protection!");
   }  else if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete();
  message.reply("Swearing is against Diamond Security Firm Policy");
-} else if (message.content === ';knownthreats')
+} else if (isCommand("knownthreats", message))
 	  message.reply({embed: {
     color: 3447003,
     author: {
@@ -151,7 +192,7 @@ var roleschannel = channels.find("name", "role-request")
     }
   }
 });
-else if (message.content === ';commands')
+else if (isCommand("Commands", message))
 	  message.reply({embed: {
     color: 3447003,
     author: {
