@@ -218,6 +218,10 @@ else if (isCommand("Commands","cmds", message))
         name: ";invite",
 	  value: "Gives you an invite code for the server."
       },
+	  {
+        name: ";kick @username",
+	  value: "Kicks the mentioned user from the discord."
+      },
     ],
     timestamp: new Date(),
     footer: {
